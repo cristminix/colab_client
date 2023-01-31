@@ -83,10 +83,13 @@ app.get("/setHost", (req, res) => {
   });
 });
 app.get("/proxy", (req, res) => {
-  var path = atob(req.query.path);
-  fetch(`${url}/${path}`).then((e)=>{return e.json()}).then((e)=>{console.log(e)})
+  var path =req.query.path;
+  fetch(`${url}/${path}`).then((e)=>{return e.json()}).then((e)=>{
+    console.log(e)
+  res.status(200).send(e);
 
-  res.status(200).send();
+})
+
 });
 
 const httpServer = createServer(app);
