@@ -2,8 +2,6 @@ import {hello,btoa,atob,get_ngrok_url,set_ngrok_url} from "../../../libs/util.js
 import app_data from "../../../data/app_data.json";
 
 const R = require('request');
-import { NextApiRequest, NextApiResponse } from "next";
-// import { useRouter } from 'next/router'
 let ngrok_url = app_data.ngrok_url;
 let old_ngrok_url = ngrok_url;
 let url;
@@ -60,7 +58,7 @@ export default async (request, response) => {
     // const headers= {'ngrok-skip-browser-warning':1}
     // const body = await fetch(url,{headers}).then(e=>{return e.json()})
     // const url = atob(request.query.url);
-    console.log(request)
+    // console.log(request)
     console.log(`GET:${url}`)
 
     return R(url).pipe(response);

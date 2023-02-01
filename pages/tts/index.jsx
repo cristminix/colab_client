@@ -93,7 +93,7 @@ initSocket = ()=>{
         console.log(`${path} complete with output url ${output_url}`);
         const proxy_url = `http://localhost:3000/api/proxy/play?url=${btoa(output_url)}`;
         this.setState({ttsLoading:false,audioOutput:proxy_url});
-        self.onTrackChange(output_url);
+        self.onTrackChange(proxy_url);
 
       }
     }
