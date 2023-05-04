@@ -1,6 +1,6 @@
 import {hello,btoa,atob,get_ngrok_url,set_ngrok_url} from "../../../libs/util.js"
 import app_data from "../../../data/app_data.json";
-
+export const config = {api:{ responseLimit: false }};
 const R = require('request');
 let ngrok_url = app_data.ngrok_url;
 let old_ngrok_url = ngrok_url;
